@@ -1,0 +1,195 @@
+body{
+    background-color: #D8DFE8;
+    font-family: "Inter";
+
+}
+
+.container_principal{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content:space-between;
+    margin-top: 2%;
+    
+    
+}
+
+/*
+.c1{
+    background-color: aqua;
+    flex-grow: 0;
+}
+.c2 {
+    background-color: aqua;
+    flex-grow: 2;
+}
+.c3 {
+    background-color: aqua;
+    flex-grow: 1;
+}
+*/
+
+.container_logo{
+    width: 10%;
+    text-align: center;
+}
+.logo{
+    margin: 20px 0px;
+    
+}
+
+.container_formulario{
+    
+    margin: 20px 0px 20px 20px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    width: 60%;
+    
+}
+
+.container_formulario textarea {
+    font-size: 32px;
+    color: #0A3871;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    width: 100%;
+    resize: none;
+    height: 500px;
+
+}
+
+.container_formulario textarea::placeholder {
+    outline: none;
+    border: none;
+    border-color: transparent;
+    color: #0A3871;
+}
+
+
+
+.container_formulario input{
+    font-size: 32px;
+    color: #0A3871;
+    border-color: transparent;
+    background-color: transparent;
+    width: 100%;    
+    height: 500px;
+}
+
+.container_formulario input::placeholder{
+    outline: none;
+    border:none;
+    border-color: transparent;
+    color: #0A3871;
+    top: 0;
+    left:0;
+}
+
+.container_formulario p {
+    font-weight: 700;
+    color: lightslategray;
+}
+
+.boton_primario {
+    height: 67px;
+    border-radius: 24px;
+    border-color: transparent;
+    color: #fff;
+    background-color: #0A3871;
+    font-size: 16px;
+    margin-top: 30px;
+    padding: 0 30px;
+}
+
+.boton_secundario {
+    height: 67px;
+    border-radius: 24px;
+    border: #0A3871 solid .5px;
+    color: #0A3871;
+    background-color: #d5e5f8;
+    
+    font-size: 16px;
+    margin-top: 30px;
+    padding: 0 30px;
+}
+
+.container_botonera {
+    display: flex;
+    flex-flow: row wrap;
+    align-items:stretch;
+    margin-bottom: 30px;
+
+}
+
+.b1{
+    flex-grow: 1;
+    margin-right: 20px;
+}
+
+.b2 {
+    flex-grow: 1;
+}
+
+.container_resultado{
+    width: 20%;
+    background-color: #fff;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-end;
+    align-content: center;
+    
+    
+    border-radius: 20px;
+    padding: 30px;
+    margin: 20px;
+    height: 600px;
+
+    background-image: url("IMG/Muñeco.png");
+    background-repeat: no-repeat;
+    background-position: 0% 18%;
+    
+    
+}
+
+.titulo_no_encontrado{
+    color: #0A3871;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px 0px;
+    
+}
+
+.parrafo_no_encontrado{
+    color: #0A3871;
+    font-size: 16px;
+    font-weight: normal;
+    text-align: center;
+    margin: 20px 0px;
+}
+
+.boton_primario:hover {
+    background-color: #2d609f;
+}
+
+.boton_primario:active {
+    background-color: #123a6a;
+}
+
+.boton_secundario:hover{
+    background-color: rgb(241, 241, 241);
+}
+
+.boton_secundario:active{
+    background-color: lightgray;
+}
+
+
+
+#boton_copiar{
+    display:none;
+    width: 100%;
+}
+
+

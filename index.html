@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Montserrat:wght@300&display=swap" rel="stylesheet"> 
+
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Encriptador Alura</title>
+</head>
+<body>
+    
+    <main>
+    <div class="container_principal">
+
+    
+        <div class="container_logo c1">
+
+            <img src="IMG/Logo.png" alt="logo de alura" class="logo">
+
+        </div>
+
+            
+            
+        <div class="container_formulario c2">
+            
+            <form action="" id="form1">
+                <textarea  placeholder="ingrese el texto aquí" name="textarea" cols="120" rows="30" id="textoEnTextarea"></textarea>
+                <!-- <label><input placeholder="ingrese el texto aquí" type="text" id="textoEntradaPrincipal" required></label><br> -->
+            </form>
+            
+            <div class="container_botonera-padre">
+                
+                <p> &#9432 Solo letras minúsculas y sin acentos</p>
+                <div class="container_botonera">
+                    <button type="button" onclick="capturarDatos(true)" class="boton_primario b1">Encriptar</button>
+                    <button type="button" onclick="capturarDatos(false)" class="boton_secundario b2">Desencriptar</button>
+                </div>
+                
+            </div>
+
+        </div>
+        
+        <div class="container_resultado c3">
+            
+            <h2 id="h2resultado"></h2>
+            <!-- <img src="IMG/Muñeco.png" alt="imagen del muñeco"></img> -->
+            <h3 class="titulo_no_encontrado">Ningún mensaje fue encontrado</h3>
+            <p class="parrafo_no_encontrado">Ingresa el texto que desees encriptar o desencriptar.</p>
+            <button class="boton_secundario" id="boton_copiar"   type="button" onclick="copiarResultado()">Copiar</button>
+            
+        </div>
+        
+    </div>
+        <script>
+            //captura de datos mediante el Id del input "textoEntradaPrincipal"
+            function capturarDatos(opcion){
+                                
+                let textoEntrada = document.getElementById("textoEnTextarea").value;
+                
+                //Aquí va la validación del formato de entrada "solo minúsculas sin carapteres especiales"
+                if(textoEntrada!=""){
+                    //llamada a la función correspondiente según el botón
+                    if(opcion){
+                        encriptar(textoEntrada);
+                    }else{
+                        desencriptar(textoEntrada);
+                    }
+                }
+            }
+            
+
+            function encriptar(textoEntrada){
+                
+                
+                
+                let nuevoTexto = textoEntrada;
+
+                nuevoTexto = nuevoTexto.replaceAll('e','enter');
+                nuevoTexto = nuevoTexto.replaceAll('i','imes');
+                nuevoTexto = nuevoTexto.replaceAll('a','ai');
+                nuevoTexto = nuevoTexto.replaceAll('o','ober');
+                nuevoTexto = nuevoTexto.replaceAll('u','ufat');
+
+
+                monstrarResultado(nuevoTexto);
+
+            }
+
+            function desencriptar (textoEntrada){
+                
+                let nuevoTexto = textoEntrada;
+
+                nuevoTexto = nuevoTexto.replaceAll('enter','e');
+                nuevoTexto = nuevoTexto.replaceAll('imes','i');
+                nuevoTexto = nuevoTexto.replaceAll('ai','a');
+                nuevoTexto = nuevoTexto.replaceAll('ober','o');
+                nuevoTexto = nuevoTexto.replaceAll('ufat','u');
+
+                monstrarResultado(nuevoTexto);
+            }
+
+            function monstrarResultado (textoResultado){
+                //quito la imagen de fondo
+                document.querySelector(".container_resultado").style.backgroundImage="none";
+
+                //asigno vacio los textos
+                document.querySelector(".titulo_no_encontrado").innerText ="";
+                document.querySelector(".parrafo_no_encontrado").innerText ="";
+
+                //hacer aparecer botón de copiar
+                document.querySelector("#boton_copiar").style.display ="initial";
+
+                //cambio el flex end a flex start
+                document.querySelector(".container_resultado").style.justifyContent="space-between";
+
+                //muestro el resultado en pantalla
+                document.querySelector("#h2resultado").innerText = textoResultado;
+            }
+
+            function copiarResultado(){
+                const textoCopia = document.getElementById("h2resultado").innerText;
+                navigator.clipboard.writeText(textoCopia);
+                
+            }
+
+
+        </script>
+    </main>
+</body>
+</html>
